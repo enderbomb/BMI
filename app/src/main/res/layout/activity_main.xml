@@ -245,6 +245,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
+        android:id="@+id/calc"
         android:layout_height="100dp"
         android:text="Calculate"
         android:textSize="24dp"

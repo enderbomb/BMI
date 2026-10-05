@@ -1,5 +1,6 @@
 package com.enderbomb.activitat03
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -20,8 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         var home = false
         var dona = false
-        var weight: Int = 0;
-        var age: Int = 0;
+        var weight: Int = 0
+        var height: Int = 0
+        var age: Int = 0
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         val substractAge: MaterialButton = findViewById(R.id.substract_age)
         val heightValue: TextView = findViewById(R.id.height_value)
         val slider: Slider = findViewById(R.id.slider)
+        val calc: MaterialButton = findViewById(R.id.calc)
 
         cardHome.setOnClickListener {
             cardHome.setCardBackgroundColor("#C5ABFF".toColorInt())
@@ -60,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         slider.addOnChangeListener { slider, value, fromUser ->
             var text = (value * 120).toInt()
             heightValue.text = "$text"
+            height = text
         }
 
         addWeight.setOnClickListener {
@@ -85,5 +89,15 @@ class MainActivity : AppCompatActivity() {
             }
             ageValue.text = "$age"
         }
+        calc.setOnClickListener {
+            val intent = Intent(this, Result::class.java)
+            intent.putExtra("home", home)
+            intent.putExtra("dona", dona)
+            intent.putExtra("weight", weight)
+            intent.putExtra("height", height)
+            intent.putExtra("age", age)
+            startActivity(intent)
+        }
+
     }
 }
