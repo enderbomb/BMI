@@ -1,10 +1,9 @@
 package com.enderbomb.activitat03
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.webkit.WebView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -17,13 +16,14 @@ import androidx.core.graphics.toColorInt
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
 
         var home = false
         var dona = false
-        var weight: Int = 0
-        var height: Int = 0
-        var age: Int = 0
+        var weight = 0.0
+        var height = 0.0
+        var age = 0
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -60,15 +60,15 @@ class MainActivity : AppCompatActivity() {
             dona = true
         }
 
-        slider.addOnChangeListener { slider, value, fromUser ->
-            var text = (value * 120).toInt()
-            heightValue.text = "$text"
+        slider.addOnChangeListener { _, value, _ ->
+            val text = (value * 120).toDouble()
+            heightValue.text = text.toInt().toString()
             height = text
         }
 
         addWeight.setOnClickListener {
             weight++
-            weightValue.text = "$weight"
+            weightValue.text = "${weight.toInt()}"
         }
 
         substractWeight.setOnClickListener {

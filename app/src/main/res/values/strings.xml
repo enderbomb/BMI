@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Activitat03</string>
+    <string name="male">Male</string>
+    <string name="male_icon">Male Icon</string>
+    <string name="female">Female Icon</string>
+    <string name="femaleText">Female</string>
 </resources>
