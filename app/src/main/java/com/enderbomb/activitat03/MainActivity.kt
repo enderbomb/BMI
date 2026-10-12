@@ -21,9 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         var home = false
         var dona = false
-        var weight = 0.0
-        var height = 0.0
-        var age = 0
+        var weight = 100.0
+        var height = 55.0
+        var age = 14
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -60,10 +60,13 @@ class MainActivity : AppCompatActivity() {
             dona = true
         }
 
+        slider.valueFrom = 20f
+        slider.valueTo = 100f
+        slider.value = 55f
+
         slider.addOnChangeListener { _, value, _ ->
-            val text = (value * 120).toDouble()
-            heightValue.text = text.toInt().toString()
-            height = text
+            heightValue.text = value.toInt().toString()
+            height = value.toDouble()
         }
 
         addWeight.setOnClickListener {
@@ -75,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             if (weight-1 >= 0) {
                 weight--
             }
-            weightValue.text = "$weight"
+            weightValue.text = "${weight.toInt()}"
         }
 
         addAge.setOnClickListener {

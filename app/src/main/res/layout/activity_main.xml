@@ -8,20 +8,33 @@
     android:layout_margin="16dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bmi_calculator"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/home"
         android:layout_width="0dp"
         android:layout_height="180dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toStartOf="@id/dona"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/title">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
             <ImageView
                 android:layout_width="96dp"
                 android:layout_height="96dp"
@@ -48,9 +61,10 @@
         android:id="@+id/dona"
         android:layout_width="0dp"
         android:layout_height="180dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/home"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/title">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -91,7 +105,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Height"
+                android:text="@string/height"
                 android:textSize="24sp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -102,14 +116,14 @@
                     android:layout_width="wrap_content"
                     android:textSize="48sp"
                     android:layout_height="wrap_content"
-                    android:text="0">
+                    android:text="@string/default_height">
 
                 </TextView>
                 <TextView
                     android:layout_width="wrap_content"
                     android:textSize="24sp"
                     android:layout_height="wrap_content"
-                    android:text="inches">
+                    android:text="@string/inches">
 
                 </TextView>
 
@@ -125,11 +139,13 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/pes"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@id/anys"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mida" >
+        app:layout_constraintTop_toBottomOf="@id/mida">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -139,13 +155,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Weight"
+                android:text="@string/weight"
                 android:textSize="24sp"/>
             <TextView
                 android:id="@+id/weight_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_weight"
                 android:textSize="48sp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -160,6 +176,7 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:padding="0dp"
+                    android:contentDescription="@string/add_icon"
                     app:icon="@drawable/outline_add_24"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp"
@@ -175,6 +192,7 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:padding="0dp"
+                    android:contentDescription="@string/substract_icon"
                     app:icon="@drawable/outline_minus_24"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp"
@@ -187,11 +205,12 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/anys"
-        android:layout_width="180dp"
+        android:layout_width="0dp"
         android:layout_height="180dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mida" >
+        app:layout_constraintStart_toEndOf="@id/pes"
+        app:layout_constraintTop_toBottomOf="@id/mida">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -201,13 +220,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Age"
+                android:text="@string/age"
                 android:textSize="24sp"/>
             <TextView
                 android:id="@+id/age_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="@string/default_age"
                 android:textSize="48sp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -222,6 +241,7 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:padding="0dp"
+                    android:contentDescription="@string/add_icon"
                     app:icon="@drawable/outline_add_24"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp"
@@ -237,6 +257,7 @@
                     android:insetTop="0dp"
                     android:insetBottom="0dp"
                     android:padding="0dp"
+                    android:contentDescription="@string/substract_icon"
                     app:icon="@drawable/outline_minus_24"
                     app:iconGravity="textStart"
                     app:iconPadding="0dp"
@@ -249,9 +270,9 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="match_parent"
         android:id="@+id/calc"
-        android:layout_height="100dp"
-        android:text="Calculate"
-        android:textSize="24dp"
+        android:layout_height="64dp"
+        android:text="@string/calculate"
+        android:textSize="24sp"
         app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 

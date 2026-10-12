@@ -4,4 +4,22 @@
     <string name="male_icon">Male Icon</string>
     <string name="female">Female Icon</string>
     <string name="femaleText">Female</string>
+    <string name="bmi_calculator">BMI CALCULATOR</string>
+    <string name="height">Height</string>
+    <string name="inches">inches</string>
+    <string name="weight">Weight</string>
+    <string name="age">Age</string>
+    <string name="calculate">Calculate</string>
+    <string name="add_icon">Add</string>
+    <string name="substract_icon">Subtract</string>
+    <string name="back_icon">Back</string>
+    <string name="bmi_results">BMI Results</string>
+    <string name="your_results">Your Results</string>
+    <string name="recalculate">Recalculate</string>
+    <string name="cant_divide">Can\'t divide by 0</string>
+    <string name="default_value">---</string>
+    <string name="error">ERROR</string>
+    <string name="default_height">55</string>
+    <string name="default_weight">100</string>
+    <string name="default_age">14</string>
 </resources>
